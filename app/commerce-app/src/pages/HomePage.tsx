@@ -46,7 +46,7 @@ export const HomePage: React.FC = () => {
         <div className="flex items-center justify-between mb-4">
           <div>
             <h1 className="text-xl font-bold">Posredniq</h1>
-            <p className="text-sm text-blue-200">B2B маркетплейс</p>
+            <p className="text-sm text-blue-200">B2B платформа</p>
           </div>
           <div className="text-right">
             <div className="text-2xl font-bold">{requests.length}</div>
