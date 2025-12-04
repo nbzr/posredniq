@@ -47,8 +47,9 @@ body {
   }
   
   .input {
-    @apply w-full px-4 py-3 rounded-xl border border-gray-200 
-           focus:border-commerce-primary focus:ring-1 focus:ring-commerce-primary 
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200
+           bg-white text-gray-900 placeholder-gray-400
+           focus:border-commerce-primary focus:ring-1 focus:ring-commerce-primary
            outline-none transition-colors;
   }
   
