@@ -358,14 +358,26 @@ function mapDbUserToUser(dbUser: DbUser): User {
   };
 }
 
+// Маппинг category_id -> slug (нужно синхронизировать с базой)
+const CATEGORY_ID_TO_SLUG: Record<number, Category> = {
+  1: 'construction',
+  2: 'metal',
+  3: 'equipment',
+  4: 'real_estate',
+  5: 'land',
+  6: 'raw_materials',
+  7: 'wood',
+  8: 'energy',
+  9: 'transport',
+  10: 'special_equipment',
+};
+
 function mapDbRequestToRequest(dbReq: any): Request {
   return {
     id: dbReq.id,
     userId: dbReq.user_id,
     type: dbReq.type as RequestType,
-    category: dbReq.category_icon ?
-      Object.entries(dbReq).find(([k, v]) => k === 'category_icon')?.[0] as Category || 'other'
-      : 'other',
+    category: (dbReq.category_id ? CATEGORY_ID_TO_SLUG[dbReq.category_id] : undefined) || 'other',
     title: dbReq.title,
     description: dbReq.description || '',
     volume: dbReq.volume || '',

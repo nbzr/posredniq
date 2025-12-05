@@ -4,26 +4,30 @@ export type RequestType = 'buy' | 'sell';
 
 export type RequestStatus = 'active' | 'matched' | 'in_progress' | 'completed' | 'cancelled';
 
-export type Category = 
-  | 'construction' 
-  | 'metal' 
-  | 'wood' 
-  | 'chemicals' 
-  | 'energy' 
-  | 'agro' 
-  | 'equipment' 
+export type Category =
+  | 'construction'
+  | 'metal'
+  | 'equipment'
   | 'real_estate'
+  | 'land'
+  | 'raw_materials'
+  | 'wood'
+  | 'energy'
+  | 'transport'
+  | 'special_equipment'
   | 'other';
 
 export const CATEGORIES: Record<Category, string> = {
-  construction: '🏗️ Стройматериалы',
-  metal: '⚙️ Металлопрокат',
-  wood: '🪵 Лесоматериалы',
-  chemicals: '🧪 Химия',
-  energy: '⚡ Энергоресурсы',
-  agro: '🌾 Агро',
-  equipment: '🔧 Оборудование',
+  construction: '🧱 Стройматериалы',
+  metal: '🔩 Металлопрокат',
+  equipment: '⚙️ Оборудование',
   real_estate: '🏢 Недвижимость',
+  land: '🌍 Земельные участки',
+  raw_materials: '📦 Сырьё',
+  wood: '🌲 Лесоматериалы',
+  energy: '⚡ Энергоресурсы',
+  transport: '🚛 Транспорт',
+  special_equipment: '🚜 Спецтехника',
   other: '📦 Другое',
 };
 

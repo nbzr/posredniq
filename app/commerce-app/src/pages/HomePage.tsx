@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Filter, X } from 'lucide-react';
 import { RequestCard } from '../components/RequestCard';
+import { WelcomeScreen } from '../components/WelcomeScreen';
 import { useStore } from '../store';
 import { CATEGORIES, type Category, type RequestType } from '../types';
 import { useTelegram } from '../hooks/useTelegram';
@@ -10,6 +11,15 @@ export const HomePage: React.FC = () => {
   const { haptic } = useTelegram();
   const [showFilters, setShowFilters] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showWelcome, setShowWelcome] = useState(false);
+
+  // Проверка, показывали ли приветствие
+  useEffect(() => {
+    const welcomeShown = localStorage.getItem('welcomeShown');
+    if (!welcomeShown) {
+      setShowWelcome(true);
+    }
+  }, []);
 
   // Загрузка данных при монтировании и при изменении фильтров
   useEffect(() => {
@@ -40,7 +50,10 @@ export const HomePage: React.FC = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <>
+      {showWelcome && <WelcomeScreen onClose={() => setShowWelcome(false)} />}
+
+      <div className="min-h-screen bg-gray-50 pb-20">
       {/* Header */}
       <div className="bg-commerce-primary text-white px-4 pt-4 pb-6">
         <div className="flex items-center justify-between mb-4">
@@ -181,5 +194,6 @@ export const HomePage: React.FC = () => {
         )}
       </div>
     </div>
+    </>
   );
 };

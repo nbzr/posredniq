@@ -212,11 +212,24 @@ export const ProfilePage: React.FC = () => {
             </div>
           )}
           
-          {/* Version */}
-          <div className="px-4 pb-6 text-center">
-            <p className="text-xs text-gray-400">
-              COMMERCE v0.1.0 • MVP
-            </p>
+          {/* About */}
+          <div className="px-4 pb-6">
+            <div className="card">
+              <h3 className="font-semibold text-gray-900 mb-3">О платформе</h3>
+              <div className="text-sm text-gray-600 space-y-2">
+                <p>
+                  <strong>Posredniq</strong> — это не просто площадка для объявлений.
+                  Это место, где каждая заявка — это возможность, а каждое совпадение — потенциальная сделка.
+                </p>
+                <p>
+                  Ты здесь не случайно. Здесь собираются те, кто понимает: время — это единственный невосполнимый ресурс.
+                  Пока ты думаешь, кто-то другой уже закрывает сделку.
+                </p>
+                <p className="text-xs text-gray-400 pt-2">
+                  Posredniq v1.0 • 2025
+                </p>
+              </div>
+            </div>
           </div>
         </>
       )}
