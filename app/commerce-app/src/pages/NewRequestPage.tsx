@@ -159,7 +159,7 @@ export const NewRequestPage: React.FC = () => {
                   formData.category === key ? 'ring-2 ring-commerce-primary' : ''
                 }`}
               >
-                <span className="text-lg">{label}</span>
+                <span className="text-lg text-gray-900">{label}</span>
                 {formData.category === key && (
                   <Check className="text-commerce-primary" size={20} />
                 )}
